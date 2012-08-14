@@ -16,6 +16,7 @@ title: Blog
 {% endfor %}
 
 <!-- Pagination links -->
+{% if paginator.total_pages != 1 %}
   {% if paginator.previous_page %}
     {% if paginator.previous_page == 1 %}
       <a href="/">Previous</a>
@@ -27,3 +28,4 @@ title: Blog
   {% if paginator.next_page %}
     <a href="/page{{paginator.next_page}}">Next</a>
   {% endif %}
+{% endif %}
