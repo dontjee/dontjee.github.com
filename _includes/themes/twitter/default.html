@@ -56,7 +56,18 @@
       </div>
 
       <footer>
-        <p>&copy; {{ site.author.name }} 2012 </p>
+        <div class="container">
+          <div class="row">
+            <div class="span2">
+              <p>{{ site.author.name }}</p>
+              <p>{{ site.author.email }}</p>
+            </div>
+            <div class="span2">
+              <p><a href="http://github.com/{{ site.author.github }}">github.com/{{ site.author.github }}</a></p>
+              <p><a href="http://twitter.com/{{ site.author.twitter }}">twitter.com/{{ site.author.twitter }}</a></p>
+            </div>
+          </div>
+        </div>
       </footer>
 
     </div> <!-- /container -->
