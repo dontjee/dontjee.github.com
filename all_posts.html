@@ -6,13 +6,15 @@ group: navigation
 ---
 {% include JB/setup %}
 
-<h3>All Posts</h3>
+<p>
+  <h3>All Posts</h3>
+</p>
 <ul>
 {% for post in site.posts %}
   <li>
-   <span class="date">{{ post.date | date: "%d %B %Y" }}</span>
+   <p class="author"><span class="date">{{ post.date | date: "%d %B %Y" }}</span></p>
    -
-   <h4 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+   <h5 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h5>
   </li>
 {% endfor %}
 <ul>
