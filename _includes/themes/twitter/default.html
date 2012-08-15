@@ -34,6 +34,11 @@
         <div class="span8">
           <ul class="nav">
             <li class="buffer">{</li>
+            {% if page.url == "/index.html" %}
+              <li class="active"><a href="{{ HOME_PATH }}">Home </a></li>
+            {% else %}
+              <li><a href="{{ HOME_PATH }}">Home </a></li>
+            {% endif %}
             {% assign pages_list = site.pages %}
             {% assign group = 'navigation' %}
             {% include JB/pages_list %}
