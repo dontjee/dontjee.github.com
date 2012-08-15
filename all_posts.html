@@ -6,5 +6,8 @@ group: navigation
 ---
 {% include JB/setup %}
 
-{% assign posts_collate = site.posts %}
-{% include JB/posts_collate %}
+{% for post in site.posts %}
+   <span class="date">{{ post.date | date: "%d %B %Y" }}</span>
+   -
+   <h4 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+{% endfor %}
