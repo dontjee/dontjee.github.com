@@ -47,3 +47,6 @@ If you're like me, you find the default theme a little boring. To update the the
     {{ post.content }}
   </div>
 {% endfor %}
+
+#####That's all folks
+That's all it takes. You can now push your posts to github and start blogging. If you wish to customize the domain, add a CNAME file...
