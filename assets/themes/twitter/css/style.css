@@ -2,22 +2,32 @@
 html, body {
   padding-top: 10px;
   background-color: #F2F2F2;
-  line-height: 20px;
+  line-height: 24px;
   font-size: 16px;
   color: #545454;
 }
 
+li {
+  line-height: 24px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
 a {
-  color: #A0A0A0;
+  color: #7C7C7C;
   text-decoration: underline;
 }
 
 a:hover {
-  color: #7C7C7C;
+  color: #4F9C09;
 }
 
 h1,h2,h3,h4,h5{
   color: #545454;
+  padding: 10px 0;
 }
 
 h1{
@@ -25,23 +35,23 @@ h1{
 }
 
 h1{
+  font-size: 55px;
+  line-height: 59px;
+}
+h2{
   font-size: 42px;
   line-height: 46px;
 }
-h2{
-  font-size: 34px;
-  line-height: 40px;
-}
 h3{
+  font-size: 34px;
+  line-height: 38px;
+}
+h4{
   font-size: 26px;
   line-height: 30px;
 }
-h4{
-  font-size: 21px;
-  line-height: 25px;
-}
 h5{
-  font-size: 16px;
+  font-size: 21px;
   font-weight: bold;
 }
 
@@ -71,6 +81,11 @@ a.brand, a.brand:hover {
   color: #7C7C7C;
 }
 
+.nav a:hover {
+  color: #4F9C09;
+  text-decoration: none;
+}
+
 .nav li.active{
   font-weight: bold;
 }
@@ -94,6 +109,10 @@ a.brand, a.brand:hover {
 .title, .title a {
   color:#545454;
   text-decoration: none;
+}
+
+.title a:hover {
+  color: #4F9C09;
 }
 
 .author {

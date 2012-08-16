@@ -5,14 +5,14 @@ layout: default
 
 {% for post in paginator.posts %}
 
-   <h3 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+   <h2 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
    <p class="author">
     <span class="date">{{ post.date | date: "%d %B %Y" }}</span>
   </p>
   <div class="content">
     {{ post.content }}
   </div>
-  --
+  <p>--</p>
 {% endfor %}
 
 <hr />
