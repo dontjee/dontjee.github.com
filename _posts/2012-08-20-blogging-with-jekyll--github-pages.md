@@ -3,7 +3,7 @@ layout: post
 title: "Blogging with Jekyll & Github Pages"
 description: ""
 category: 
-tags: []
+tags: [jekyll, blogging]
 ---
 {% include JB/setup %}
 #####The Basics
