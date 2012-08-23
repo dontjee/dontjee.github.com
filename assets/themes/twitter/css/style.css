@@ -58,12 +58,12 @@ h5{
 /* header */
 a.brand, a.brand:hover {
   color: #4F9C09;
-  float: left;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .nav {
-  padding-top: 16px;
+  padding-top: 32px;
 }
 
 .nav li{
@@ -117,4 +117,9 @@ a.brand, a.brand:hover {
 
 .author {
   color: #A0A0A0;
+}
+
+@media (max-width: 767px) {
+  .head .span7 { min-width: 320px; }
+  .nav { padding-top: 0; margin-top: -24px; }
 }
