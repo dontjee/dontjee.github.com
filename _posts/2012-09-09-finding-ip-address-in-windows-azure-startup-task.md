@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Finding IP Address in Windows Azure startup task"
+title: "Finding VM IP Address in a Windows Azure startup task"
 description: ""
 category: 
 tags: []
