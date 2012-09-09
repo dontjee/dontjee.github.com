@@ -117,6 +117,7 @@ a.brand, a.brand:hover {
 
 .author {
   color: #A0A0A0;
+  white-space: nowrap;
 }
 
 @media (max-width: 767px) {
