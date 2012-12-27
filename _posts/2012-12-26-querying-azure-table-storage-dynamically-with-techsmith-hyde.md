@@ -6,14 +6,14 @@ category:
 tags: []
 ---
 {% include JB/setup %}
-Lately I've been working on [TechSmith Hyde](http://techsmith.github.com/hyde/) a fair bit at work. One interesting workflow that Hyde allows you to accomplish is to query records via dynamics.
+Lately I've been working on [TechSmith Hyde](http://techsmith.github.com/hyde/) a fair bit at work. One interesting workflow that Hyde allows is interacting with Table Storage via dynamics. For example, here is the code to query one row in a table.
 {% highlight csharp %}
     var tableStorage = new AzureTableStorageProvider(storageAccount);
     dynamic result = tableStorage.Get("MyTable", "Partition", "Row");
     Console.WriteLine(result.DynamicStringProperty);
 {% endhighlight %}
 
-All operations (Add/Insert/Update/Upsert/Delete) are supported with dynamics as well.
+All Table Storage operations (Add/Insert/Update/Upsert/Delete) are supported with dynamics as well.
 {% highlight csharp %}
     dynamic dog = new ExpandoObject();
     dog.Type = "Dog";
@@ -49,6 +49,4 @@ Finally, this opens up the possibility to query those different record types at 
     }
 {% endhighlight %}
 
-This code will query all records we have for the `"Dog"` partition and process them, handling both the animal type and animal instance records. This could be even be expanded to handle multiple different types of records with the same query. The benefit is that it only takes 1 query to bring back all records. 
-
-Dynamic querying of Table Storage is not for every situation, but it can be a powerful tool in your toolbox.
+This code will query all records we have for the `"Dog"` partition and process them, handling both the animal type and animal instance records. This could be even be expanded to handle multiple different types of records with the same query. The benefit is that it only takes 1 query to bring back all records. I wouldn't recommend dynamic querying for every situation, but it can be a powerful tool in your Azure toolbox.
