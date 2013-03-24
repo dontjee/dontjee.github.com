@@ -13,7 +13,7 @@ That's great for the rest of the code, but what about testing the Repository/Que
 This approach works but I think we can do better. No matter how hard we try, there is always going to be some amount of logic in our data access classes. This is where [TechSmith Hyde](http://techsmith.github.com/hyde/) comes in.
 
 #####Using TechSmith Hyde to unit test access to Azure Table Storage
-The approach that TechSmith Hyde takes is to provide a [fake implementation of table storage](http://www.martinfowler.com/bliki/InMemoryTestDatabase.html) that implements the same `TableStorageProvider` base class that the Azure implementation does. This allows the developer to write methods against the generic `TableStorageProvider` interface, then select the proper test/production implementation with dependency injection. Both classes have consistent behavior (exceptions thrown, error cases, etc.) regradless of the implementation. A simple example is below:
+The approach that TechSmith Hyde takes is to provide a [fake implementation of table storage](http://www.martinfowler.com/bliki/InMemoryTestDatabase.html) that implements the same `TableStorageProvider` base class that the Azure implementation does. This allows the developer to write methods against the generic `TableStorageProvider` interface, then select the proper test/production implementation with dependency injection. Both classes have consistent behavior (exceptions thrown, error cases, etc.) regardless of the implementation. A simple example is below:
 
 {% highlight csharp %}
 public class UserRepository
