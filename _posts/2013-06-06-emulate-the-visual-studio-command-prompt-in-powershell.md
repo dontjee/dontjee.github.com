@@ -25,7 +25,7 @@ cmd /c "vcvarsall.bat&set" | foreach {
     $pair = $_.split("=");
 
     # Set the environment variable for the current PowerShell session
-    Set-Item -Force -Path "ENV:\$($pair[0])" -Value "\$($pair[1])"
+    Set-Item -Force -Path "ENV:\$($pair[0])" -Value "$($pair[1])"
   }
 }
 
@@ -36,3 +36,6 @@ popd
 Save the file, and reopen a new PowerShell prompt. You should have a fully functioning Visual Studio Powershell Prompt.
 
 Finally, if you don't want to load the Visual Studio variables for every prompt, move the lines above to a file in your path and execute that file when you want the variables `. thefilethathasthescriptabove.ps1`.
+
+<br />
+- *Edit 6/7/2013* - Corrected typo in `Set-Item` line.
