@@ -8,7 +8,7 @@ tags: []
 {% include JB/setup %}
 A common feature of website authentication is the 'Remember me' or 'Keep me signed in' option. This feature is not a built-in feature of Windows Identity Foundation. The easiest solution is to make all Relying Party cookies Session cookies, meaning they expire when you close the browser. When you navigate back to the relying party you'll be sent to the STS, automatically logged in and sent back. This can be a pain for a number of reasons so it's ideal if we can setup the Relying Party cookies the same as the STS. I'll show how it can be implemented using claims as the means of communication between the STS and Relying Party.
 
-####The STS setup
+#### The STS setup
 To communicate whether or not the user wanted to be remembered, we're going to use claims. Specifically we'll be using two existing claims from the `Microsoft.IdentiyModel.Claims` namespace,  `IsPersistent` and `Expiration`. To do so, first add the claims to the FederationMetadata xml so you see something like this:
 
 {% highlight xml %}
@@ -50,7 +50,7 @@ public static IClaimsPrincipal CreatePrincipal( UserModel user, bool rememberMe 
 
 The two steps above ensure that the STS will communicate the necessary information to the Relying Party for them to set up their session to mirror the STS session.
 
-####Relying Party setup
+#### Relying Party setup
 
 On the Relying Party side we have to override the default WIF behavior for the session expiration and set it manually based on the claims we've specified in the STS. We'll need to override the `SessionSecurityTokenCreated` behavior to do so. Place the following code in the `global.asax` of the Relying Party.
 

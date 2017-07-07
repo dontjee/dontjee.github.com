@@ -10,7 +10,7 @@ Windows Azure deployments are done using a convenient `.cspkg` and `.cscfg` file
 
 Problems arise when you need to modify something in the cspkg, such as the `Web.Config` for your web application. A common scenario where this is necessary is configuring [Windows Identity Foundation](http://msdn.microsoft.com/en-us/security/aa570351.aspx) to update a trusted issuer thumbprint or federation realm. Options to fix the problem are to create a new package for each environment or creating the package on demand as part of the deploy process. Microsoft has [provided a way to create packages manually](http://msdn.microsoft.com/en-us/library/windowsazure/gg432988.aspx) but it's complicated to set up and involves duplicating a lot of work that's done for us already in the MSBuild tasks for the cloud project.
 
-#####The fix
+##### The fix
 An alternate approach I've had success with is to modify the `Web.Config` on role start in your web project based on values stored in the `.cscfg` configuration file. To do this, copy the `Web.Config` in your project and rename it to `Web.Config_pretransform` or something similar. Also stop tracking the `Web.Config` in your source control since it will just be generated as needed (but make sure the project still has a reference to it). Next add code to your `WebRole.cs` to do the file modification like so:
 {% highlight csharp %}
 public override bool OnStart()

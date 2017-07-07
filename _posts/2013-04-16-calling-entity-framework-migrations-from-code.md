@@ -8,7 +8,7 @@ tags: []
 {% include JB/setup %}
 Entity Framework Code First makes generating database migrations dead simple. They can then be run from the commandline with the `migrate.exe` executable included in the Entity Framework nuget package. However, in some continuous deployment scenarios it's easier to execute the migration from C# code. It turns out this process is pretty simple too, but not as well documented.
 
-#####Running migrations from code
+##### Running migrations from code
 The three necessary classes are `DbConnectionInfo`, your specific implementation of `DbMigrationsConfiguration`, and `DbMigrator`. First, the `DbConnectionInfo` has to be configured
 {% highlight csharp %}
 string sqlConnectionString = "YOUR_CONNECTION_STRING_HERE";
