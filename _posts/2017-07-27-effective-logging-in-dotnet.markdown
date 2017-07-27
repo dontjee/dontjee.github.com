@@ -46,7 +46,7 @@ using (LogContext.PushProperty("CorrelationId", Request.Id))
   // All logs inside the context will have the CorrelationId added to them
 }
 ~~~
-`Microsoft.Extensions.Logging` also supports adding properties to all messages through `ILogger.BeginScope()`. ASP.Net core will even add this by default. You can even use a library like [CorrelationId](https://github.com/stevejgordon/CorrelationId) to ensure a CorrelationId is passed among services if you are running in a microservice environment where you want to track a request across services.
+`Microsoft.Extensions.Logging` also supports adding properties to all messages through `ILogger.BeginScope()`. ASP.Net core will even add this by default. You can even use a library like [CorrelationId](https://github.com/stevejgordon/CorrelationId) to ensure a CorrelationId is passed among services if you are running in a microservice environment where you want to track a request across services. In addition to tracking CorrelationId, things like Environment and MachineName can be helpful when troubleshooting.
 
 #### Keep it DRY
 Rather than sprinkling `Log.Information(...)` calls throughout your codebase I suggest creating a simple, generic class to encapsulate the logger (Credit to [Erik Heemskerk](https://www.erikheemskerk.nl/meaningful-logging-and-metrics/) for the idea) -
