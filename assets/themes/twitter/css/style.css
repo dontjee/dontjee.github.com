@@ -8,12 +8,12 @@ html, body {
 }
 
 li {
-  line-height: 24px;
+  line-height: 28px;
 }
 
 p {
   font-size: 16px;
-  line-height: 24px;
+  line-height: 28px;
 }
 
 a {
@@ -123,4 +123,21 @@ a.brand, a.brand:hover {
 @media (max-width: 767px) {
   .head .span7 { min-width: 320px; }
   .nav { padding-top: 0; margin-top: -24px; }
+}
+
+.post-content {
+  max-width: 640px;
+  background-color: white;
+  margin: 0 -40px;
+  padding: 40px;
+}
+
+.post-separator {
+  border-bottom: 40px solid #F2F2F2;
+  margin: 0 -40px;
+  padding: 0 40px
+}
+
+.post-separator-padding {
+  height: 30px;
 }
