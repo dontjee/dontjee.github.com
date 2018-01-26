@@ -141,3 +141,14 @@ a.brand, a.brand:hover {
 .post-separator-padding {
   height: 30px;
 }
+
+.left-header {
+  width: 300px;
+  display: inline-block;
+}
+
+.right-header {
+  width: 300px;
+  display: inline-block;
+  padding-left: 2rem;
+}
