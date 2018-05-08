@@ -56,6 +56,7 @@ Now that we've configured the ruleset files, the next step is to do a `rebuild` 
 1. Under the code analyzer, find the rule you want to disable and right-click on it and set the `Rule Set Severity` to `None`.
 ![Code-Analyzer-Rule-Right-Click](/images/2018/5/code_analyzer_rule_right_click.png)
  This adds the following block to the corresponding ruleset file to disable the rule:
+
  ```xml
 <Rules AnalyzerId="Microsoft.CodeQuality.Analyzers" RuleNamespace="Microsoft.CodeQuality.Analyzers">
   <Rule Id="CA2007" Action="None" />
