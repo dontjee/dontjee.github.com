@@ -22,3 +22,7 @@ sudo mount -t drvfs C: /mnt/c -o metadata
 ```
 
 [More details are in the Microsoft release notes](https://docs.microsoft.com/en-us/windows/wsl/release-notes#build-17063) for setting default file permissions in the WSL partition and help configuring other mount options.
+
+## Update 5/12/2020
+
+An outcome of that change was that I was seeing file permissions changes from `644` to `755` when I edited a file in Visual Studio or any Windows application. To fix this, make sure that the `core.filemode` is set to false inside each git repository where you see the permissions being changed - `git config core.filemode false`.
